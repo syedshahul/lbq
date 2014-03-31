@@ -1,0 +1,31 @@
+logs/*
+*/logs/*
+!.gitkeep
+
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# Maven build artifacts
+target
+java/out
+# IntelliJ project files
+.idea
+*.iml
+*.ipr
+*.iws
+
+# Eclipse files
+.project
+.settings
+.classpath
+bin
+
+# Vim temporary files
+*.swp
+
+# Sublime files
+*.sublime-*
