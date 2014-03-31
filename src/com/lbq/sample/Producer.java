@@ -1,15 +1,15 @@
 package com.lbq.sample;
 
-import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ArrayBlockingQueue;
 
 /**
  * @author: Syed Shahul
  */
 public class Producer implements Runnable {
-	LinkedBlockingQueue linkedBlockingQueue = null;
+	ArrayBlockingQueue arrayBlockingQueue = null;
 
-	public Producer(LinkedBlockingQueue linkedBlockingQueue) {
-		this.linkedBlockingQueue = linkedBlockingQueue;
+	public Producer(ArrayBlockingQueue arrayBlockingQueue) {
+		this.arrayBlockingQueue = arrayBlockingQueue;
 	}
 
 	@Override public void run() {
@@ -18,7 +18,7 @@ public class Producer implements Runnable {
 			Long s;
 			for(i = 0; i < 5000; i++) {
 				s = System.currentTimeMillis();
-				linkedBlockingQueue.put(s.toString().concat("_").concat(i.toString()));
+				arrayBlockingQueue.put(s.toString().concat("_").concat(i.toString()));
 				Thread.sleep(100);
 			}
 

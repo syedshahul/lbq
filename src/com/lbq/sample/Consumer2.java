@@ -1,22 +1,22 @@
 package com.lbq.sample;
 
-import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ArrayBlockingQueue;
 
 /**
  * @author: Syed Shahul
  */
 public class Consumer2 implements Runnable {
-	LinkedBlockingQueue linkedBlockingQueue = null;
+	ArrayBlockingQueue arrayBlockingQueue = null;
 
-	public Consumer2(LinkedBlockingQueue linkedBlockingQueue) {
-		this.linkedBlockingQueue = linkedBlockingQueue;
+	public Consumer2(ArrayBlockingQueue arrayBlockingQueue) {
+		this.arrayBlockingQueue = arrayBlockingQueue;
 	}
 
 	@Override public void run() {
 		try {
 
 			while (true){
-				System.out.println("Consumer2  "+linkedBlockingQueue.take());
+				System.out.println("Consumer2  "+arrayBlockingQueue.take());
 			}
 
 		} catch(InterruptedException e) {

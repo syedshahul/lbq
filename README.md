@@ -1,4 +1,4 @@
 lbq
 ===
 
-LinkedBlockingQueue
+ArrayBlockingQueue
