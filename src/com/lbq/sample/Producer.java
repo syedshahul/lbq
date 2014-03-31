@@ -5,8 +5,8 @@ import java.util.concurrent.LinkedBlockingQueue;
 /**
  * @author: Syed Shahul
  */
-public class Producer implements Runnable{
-	LinkedBlockingQueue linkedBlockingQueue =null;
+public class Producer implements Runnable {
+	LinkedBlockingQueue linkedBlockingQueue = null;
 
 	public Producer(LinkedBlockingQueue linkedBlockingQueue) {
 		this.linkedBlockingQueue = linkedBlockingQueue;
@@ -14,13 +14,16 @@ public class Producer implements Runnable{
 
 	@Override public void run() {
 		try {
-			linkedBlockingQueue.put("1");
-			Thread.sleep(1000);
-			linkedBlockingQueue.put("2");
-			Thread.sleep(1000);
-			linkedBlockingQueue.put("3");
-		} catch (InterruptedException e) {
-			e.printStackTrace();
+			Integer i;
+			Long s;
+			for(i = 0; i < 5000; i++) {
+				s = System.currentTimeMillis();
+				linkedBlockingQueue.put(s.toString().concat("_").concat(i.toString()));
+				Thread.sleep(100);
+			}
+
+		} catch(InterruptedException e) {
+			System.out.println(e.getMessage());
 		}
 	}
 }
