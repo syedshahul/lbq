@@ -18,7 +18,7 @@ public class Consumer implements Runnable {
 			Integer i;
 
 			while (true){
-				System.out.println("take  "+linkedBlockingQueue.take());
+				System.out.println("Consumer  "+linkedBlockingQueue.take());
 			}
 
 			/*System.out.println("linkedBlockingQueue : "+linkedBlockingQueue.toString());
