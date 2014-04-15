@@ -8,8 +8,9 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
 /**
- * @author: Syed Shahul
- * LinkedBlockingQueue
+ * @author  Syed Shahul
+ * @<title>LinkedBlockingQueue</title>
+ * @see : http://docs.oracle.com/javase/7/docs/api/java/util/Queue.html
  */
 public class LBQSetup {
 	public static void main(String[] args) throws InterruptedException {
