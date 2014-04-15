@@ -27,7 +27,7 @@ public class BQProducer implements Runnable {
 			}
 			end = System.currentTimeMillis();
 			System.out.println("BQProducer time to put to blocking queue "+(end -
-					start));
+					start) + " millis");
 		} catch (InterruptedException e) {
 			System.out.println("BQProducer : " + e.getMessage());
 		}

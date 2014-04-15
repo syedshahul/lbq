@@ -18,16 +18,10 @@ public class LBQSetup {
 		BQConsumer bqConsumer = new BQConsumer(blockingQueue);
 		BQConsumer1 bqConsumer1 = new BQConsumer1(blockingQueue);
 
-		Long start =0L;
-		Long end =0L;
-		start = System.currentTimeMillis();
-
 		new Thread(bqProducer).start();
 		new Thread(bqConsumer).start();
 		new Thread(bqConsumer1).start();
 
 		Thread.sleep(10);
-		end = System.currentTimeMillis();
-		System.out.println("Process time LBQSetup "+(end - start));
 	}
 }
