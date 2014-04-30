@@ -20,6 +20,8 @@ public class BQConsumer1 implements Runnable {
 
 			while (true) {
 				System.out.println("BQConsumer1  " + blockingQueue.take());
+				// assuming some process
+				Thread.sleep(1000);
 			}
 
 			/*System.out.println("blockingQueue : "+blockingQueue.toString());
