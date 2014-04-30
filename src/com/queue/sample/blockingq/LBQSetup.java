@@ -2,6 +2,9 @@ package com.queue.sample.blockingq;
 
 import com.queue.sample.blockingq.consumer.BQConsumer;
 import com.queue.sample.blockingq.consumer.BQConsumer1;
+import com.queue.sample.blockingq.consumer.BQConsumer2;
+import com.queue.sample.blockingq.consumer.BQConsumer3;
+import com.queue.sample.blockingq.consumer.BQConsumer4;
 import com.queue.sample.blockingq.producer.BQProducer;
 
 import java.util.concurrent.BlockingQueue;
@@ -25,15 +28,26 @@ public class LBQSetup {
 		BQProducer bqProducer = new BQProducer(blockingQueue);
 		BQConsumer bqConsumer = new BQConsumer(blockingQueue);
 		BQConsumer1 bqConsumer1 = new BQConsumer1(blockingQueue);
+		BQConsumer2 bqConsumer2 = new BQConsumer2(blockingQueue);
+		BQConsumer3 bqConsumer3 = new BQConsumer3(blockingQueue);
+		BQConsumer4 bqConsumer4 = new BQConsumer4(blockingQueue);
 
 		Thread prdcr1 = new Thread(bqProducer);
 		prdcr1.start();
 
-		Thread c1 =new Thread(bqConsumer);
-		c1.start();
+		Thread c =new Thread(bqConsumer);
+		c.start();
 
-		Thread c2 =new Thread(bqConsumer1);
+		Thread c1 =new Thread(bqConsumer1);
+		c1.start();
+		Thread c2 =new Thread(bqConsumer2);
 		c2.start();
+
+		Thread c3 =new Thread(bqConsumer3);
+		c3.start();
+
+		Thread c4 =new Thread(bqConsumer4);
+		c4.start();
 
 		Thread.sleep(10);
 	}
